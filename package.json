@@ -1,0 +1,23 @@
+{
+  "name": "protoc-gen-grpc-web",
+  "version": "1.0.3",
+  "description": "A protoc-gen-grpc-web binary for npm.",
+  "main": "index.js",
+  "bin": {
+    "protoc-gen-grpc-web": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foisonocean/protoc-gen-grpc-web-npm"
+  },
+  "author": "foisonocean <hronro@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+  	"postinstall": "node ./post-install.js"
+  },
+  "dependencies": {
+    "download": "^7.1.0",
+    "fs-extra": "^7.0.1"
+  }
+}
