@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const download = require('download');
 const PLUGIN = require("./");
 
-const VERSION = '1.0.3';
+const VERSION = '1.0.4';
 const DL_PREFIX = `https://github.com/grpc/grpc-web/releases/download/`;
 const BIN_DIR = path.resolve(__dirname, "bin");
 const EXT = process.platform === 'win32' ? '.exe' : '';
@@ -15,8 +15,6 @@ async function run() {
   }
 
   await fs.ensureDir(BIN_DIR);
-  const packageJsonPath = path.resolve(__dirname, 'package.json');
-  // const execFilename = 'protoc-gen-grpc-web-' + process.platform + '-x86_64' + EXT;
   const execFilename = `protoc-gen-grpc-web-${VERSION}-${process.platform}-x86_64${EXT}`;
 
   const downloadUrl = DL_PREFIX + VERSION + '/' + execFilename;

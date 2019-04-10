@@ -1,6 +1,6 @@
 {
   "name": "protoc-gen-grpc-web",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A protoc-gen-grpc-web binary for npm.",
   "main": "index.js",
   "bin": {
