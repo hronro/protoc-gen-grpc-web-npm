@@ -17,7 +17,7 @@
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
-    "download": "^7.1.0",
-    "fs-extra": "^7.0.1"
+    "download": "^8.0.0",
+    "fs-extra": "^9.0.1"
   }
 }
