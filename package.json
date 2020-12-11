@@ -1,10 +1,10 @@
 {
   "name": "protoc-gen-grpc-web",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A protoc-gen-grpc-web binary for npm.",
   "main": "index.js",
   "bin": {
-    "protoc-gen-grpc-web": "./cli.js"
+    "protoc-gen-grpc-web": "cli.js"
   },
   "repository": {
     "type": "git",
