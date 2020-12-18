@@ -1,3 +1,7 @@
 # protoc-gen-grpc-web binary for npm
 
-Forked from [zaucy-protoc-gen-grpc-web](https://www.npmjs.com/package/zaucy-protoc-gen-grpc-web), and change the download source to gprc official binary.
+This package provides the official [grpc-web protoc plugin](https://github.com/grpc/grpc-web#code-generator-plugin), downloaded from [grpc-web releases](https://github.com/grpc/grpc-web/releases).
+
+## Credits
+
+Forked from [zaucy-protoc-gen-grpc-web](https://www.npmjs.com/package/zaucy-protoc-gen-grpc-web).
