@@ -12,7 +12,16 @@ const PLATFORM_NAME = process.platform === 'win32' ? 'windows' : process.platfor
 
 async function run() {
   if (process.arch !== 'x64') {
-    throw new Error(`Unsupported arch: only support x86_64, but you're using ${process.arch}`);
+    console.log(process.arch, process.platform);
+    if (process.arch === "arm64" && process.platform === "darwin") {
+      console.log(
+        "macos arm64 platform detected, using x64 until https://github.com/grpc/grpc-web/issues/1159 is resolved"
+      );
+    } else {
+      throw new Error(
+        `Unsupported arch: only support x86_64, but you're using ${process.arch}`
+      );
+    }
   }
 
   await fs.ensureDir(BIN_DIR);
