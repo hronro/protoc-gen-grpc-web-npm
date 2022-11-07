@@ -4,28 +4,22 @@ const fs = require('fs-extra');
 const download = require('download');
 const PLUGIN = require("./");
 
-const VERSION = '1.3.0';
+const VERSION = '1.4.1';
 const DL_PREFIX = 'https://github.com/grpc/grpc-web/releases/download/';
 const BIN_DIR = path.resolve(__dirname, "bin");
 const EXT = process.platform === 'win32' ? '.exe' : '';
 const PLATFORM_NAME = process.platform === 'win32' ? 'windows' : process.platform;
+const ARCH = process.arch === 'arm64' ? 'aarch64' : 'x86_64';
 
 async function run() {
-  if (process.arch !== 'x64') {
-    console.log(process.arch, process.platform);
-    if (process.arch === "arm64" && process.platform === "darwin") {
-      console.log(
-        "macos arm64 platform detected, using x64 until https://github.com/grpc/grpc-web/issues/1159 is resolved"
-      );
-    } else {
-      throw new Error(
-        `Unsupported arch: only support x86_64, but you're using ${process.arch}`
-      );
-    }
+  if (process.arch !== 'x64' && process.arch !== 'arm64') {
+    throw new Error(
+      `Unsupported arch: only support x86_64 and arm64, but you're using ${process.arch}`
+    );
   }
 
   await fs.ensureDir(BIN_DIR);
-  const execFilename = `protoc-gen-grpc-web-${VERSION}-${PLATFORM_NAME}-x86_64${EXT}`;
+  const execFilename = `protoc-gen-grpc-web-${VERSION}-${PLATFORM_NAME}-${ARCH}${EXT}`;
 
   const downloadUrl = DL_PREFIX + VERSION + '/' + execFilename;
 
